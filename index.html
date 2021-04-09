@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <title>Vue Dischi Musicali</title>
@@ -9,12 +8,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/master.css">
 </head>
 
 <body>
-
   <div id="app">
     <header>
       <a class="logo" href="#"><img src="https://fontmeme.com/permalink/210409/4937b74c6317b36c509baa13669b4b20.png" alt="Boolflix Logo"></a>
@@ -25,25 +22,22 @@
     </header>
 
     <main>
-      <div class="container">
-        <div v-for="film in films">
-          <img :src=" 'https://image.tmdb.org/t/p/w300' + film.poster_path" alt="">
+      <div class="container"  v-for="film in films">
+          <img class="poster" :src=" 'https://image.tmdb.org/t/p/w300' + film.poster_path">
 
-          <div class="overview">
-            <p> <strong>Titolo: </strong> {{ film.title }} </p>
-            <p> <strong>Titolo Originale: </strong> {{ film.original_title }} </p>
-            <p> <strong>Voto: </strong>
-            </p>
-            <p> <strong>Overview: </strong> {{ film.overview }} </p>
+          <div class="details">
+            <p><strong>Titolo: </strong>{{ film.title }}</p>
+            <p><strong>Titolo Originale: </strong>{{ film.original_title }}</p>
+            <p><strong>Lingua: </strong> {{film.original_language}}</p>
+            <p> <strong>Voto: </strong>{{ film.vote_average }}</p>
           </div>
         </div>
-      </div>
+
+
     </main>
   </div>
 
 
-
   <script src="js/script.js"></script>
 </body>
-
 </html>
