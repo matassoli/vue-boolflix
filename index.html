@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Vue Dischi Musicali</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <header>
+      <a class="logo" href="#"><img src="https://fontmeme.com/permalink/210409/4937b74c6317b36c509baa13669b4b20.png" alt="Boolflix Logo"></a>
+      <label for="search">
+        <input type="text" placeholder="Cerca" v-model="title" @keydown.13="search">
+        <button @click="search"><i class="fas fa-search"></i></button>
+      </label>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="card" v-for="film in films">
+          <img class="poster-film" :src=" 'https://image.tmdb.org/t/p/w300' + film.poster_path" alt="">
+
+          <div class="overview">
+            <p> <strong>Titolo: </strong> {{ film.title }} </p>
+            <p> <strong>Titolo Originale: </strong> {{ film.original_title }} </p>
+            <p> <strong>Voto: </strong> <i class="far fa-star"></i> <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </p>
+            <p> <strong>Overview: </strong> {{ film.overview }} </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
