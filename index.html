@@ -25,8 +25,8 @@
 
     <main>
       <div class="container" v-for="film in films">
-        <img class="poster" v-if="film.poster_path !== null" :src=" 'https://image.tmdb.org/t/p/w300' + film.poster_path">
-        <img class="poster" v-else src="https://via.placeholder.com/200x300">
+        <img class="poster" v-if="film.poster_path !== null" :src=" 'https://image.tmdb.org/t/p/w400' + film.poster_path">
+        <img class="poster" v-else src="https://via.placeholder.com/300x400">
 
         <div class="details">
           <p><strong>Titolo: </strong>{{ film.title }}{{ film.name }}</p>
