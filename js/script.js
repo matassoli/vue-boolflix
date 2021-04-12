@@ -25,7 +25,7 @@ var app = new Vue({
           language: "it-IT",
         }
       }).then((response) => {
-        this.films = response.data.results;
+        this.films = [...this.films, ...response.data.results];
       });
     },
 
