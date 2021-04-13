@@ -3,6 +3,13 @@ var app = new Vue({
   data: {
     title: "",
     films: [],
+    flags: [
+      "it",
+      "en",
+      "ja",
+      "de",
+      "fr",
+    ]
 
   },
   methods: {

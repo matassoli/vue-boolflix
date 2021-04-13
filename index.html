@@ -31,7 +31,7 @@
         <div class="details">
           <p><strong>Titolo: </strong>{{ film.title }}{{ film.name }}</p>
           <p><strong>Titolo Originale: </strong>{{ film.original_title }}{{ film.name }}</p>
-          <p><strong>Lingua: </strong>{{ film.original_language }}</p>
+          <p><strong>Lingua: </strong><img class="flag" v-if="flags.includes(film.original_language)" :src="'img/' + film.original_language + '.png'"><span v-else>{{film.original_language}}</span></p>
           <p> <strong>Voto: </strong><span v-for="item in (Math.round((film.vote_average) / 2)) "><i class="fas fa-star"></i></span><span v-for="item in (5 - (Math.round((film.vote_average) / 2)))"><i class="far fa-star"></i></span>
           </p>
         </div>
